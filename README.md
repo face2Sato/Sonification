@@ -54,6 +54,4 @@ We've implemented data pattern sonification using FM synthesis. Air pollution da
 <img width="800" alt="Screen Shot 2022-02-13 at 7 26 31" src="https://user-images.githubusercontent.com/50603311/153730544-a8e11a01-2dcb-47b3-b056-3da794b241d9.png">
  
  - Visualization (3D Scatter)
-
-
 <img width="400" alt="Screen Shot 2022-02-13 at 7 28 40" src="https://user-images.githubusercontent.com/50603311/153730599-745e5cd3-8e28-412c-ab89-c9a602e40817.png">
