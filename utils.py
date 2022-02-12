@@ -165,9 +165,6 @@ def sonification(mapping, sonification_rate, dir, fname):
 
 
 
-
-# calimaps...xxxx10calima
-
 def pattern_mining(outputfile, minSup, maxPer):
 	
 	obj = alg.PFPGrowth('tmp.csv', minSup, maxPer) 
@@ -246,9 +243,9 @@ def select_stations():
 def get_dataset(start_day, end_day, pollutant, snames):
 
 	server = SSHTunnelForwarder(
-				("163.143.87.108", 22),
-				ssh_username="yoshiki",
-				ssh_password="yosi@810",
+				("", ),
+				ssh_username="",
+				ssh_password="",
 				ssh_pkey=None,
 				remote_bind_address=('localhost', 5432),
 	)
@@ -256,11 +253,11 @@ def get_dataset(start_day, end_day, pollutant, snames):
 	server.start()
 
 	conn = psycopg2.connect(
-		host='163.143.87.108',
-		port='5432',
-		database='airpollution',
-		user='yoshiki',
-		password='yoshiki4916',
+		host='',
+		port='',
+		database='',
+		user='',
+		password='',
 	)
 
 	# snames_str...str ("'s1','s2',...'s6'")
