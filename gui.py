@@ -96,18 +96,9 @@ layout=[
     ])]
 ]
 
-# ステップ4. ウィンドウの生成
 window = sg.Window('Sonification', layout, finalize=True)
 
-# fig = plt.figure(figsize=(30,20))
-# ax = plt.subplot(projection='3d')
 
-
-# # figとCanvasを関連付ける．
-# fig_agg = draw_figure(window['-CANVAS-'].TKCanvas, fig)
-
-
-# ステップ5. イベントループ
 try:
 
     while True:
@@ -118,7 +109,7 @@ try:
         dataset_path=folderpath + '_datasets.csv'
         patterns_path=folderpath + '_patterns.csv'
 
-        if event == sg.WIN_CLOSED: #ウィンドウのXボタンを押したときの処理
+        if event == sg.WIN_CLOSED:
             break
 
         if event == 'find patterns' and values['dir'] != '':
@@ -196,7 +187,6 @@ try:
                     ax.yaxis._axinfo['tick']['color']='gray'
                     ax.zaxis._axinfo['tick']['color']='gray'
 
-
                     ax.xaxis.pane.set_edgecolor('grey')
                     ax.yaxis.pane.set_edgecolor('grey')
                     ax.zaxis.pane.set_edgecolor('grey')
@@ -205,11 +195,7 @@ try:
                     fig.colorbar(sc,ax=ax, label='time (older -> newer)')
 
                     draw_plot(fig)
-                    
-                    
-
-                    # fig_ = df[['time'] + mapping.to_list()].plot('time',subplots=True,sharex=True, sharey=True, rot=20, figsize=(15,8),fontsize=7)
-
+                
                     stop_threads = False
                     t = Thread(target=play, args=(wavpath, window,), daemon=True)
                     t.start()
@@ -219,20 +205,6 @@ try:
                     del_plot(fig)
                     t.join()
             
-
-        # if event == 'display':
-            # filepath=values['dir']+'/'+values['fname']+'/'+values['fname']
-            # dataset_path=filepath + '_datasets.csv'
-
-            # toggle = not toggle
-
-            # if toggle is True:
-            #     df = pd.read_csv(dataset_path)
-            #     fig_ = df.plot('time',subplots=True,sharex=True, sharey=True, rot=20, figsize=(10,8),fontsize=7)
-            #     draw_plot(fig_)
-
-            # else:
-            # del_plot(fig_)
             
 except Exception as e:
     print(e, end="\n\n")

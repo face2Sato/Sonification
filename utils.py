@@ -359,8 +359,4 @@ def draw_plot(fig):
 
 def del_plot(fig):
 
-	# plt.cla(): Axesをクリア
-	# plt.clf(): figureをクリア
-	# plt.close(): プロットを表示するためにポップアップしたウィンドウをクローズ
-
 	plt.close()
