@@ -217,7 +217,7 @@ def select_stations():
 
 	conn = psycopg2.connect(
 		host='',
-		port='5432',
+		port='',
 		database='',
 		user='',
 		password='',
@@ -244,7 +244,7 @@ def get_dataset(start_day, end_day, pollutant, snames):
 				ssh_username="",
 				ssh_password="",
 				ssh_pkey=None,
-				remote_bind_address=('localhost', 5432),
+				remote_bind_address=('', ),
 	)
 
 	server.start()
