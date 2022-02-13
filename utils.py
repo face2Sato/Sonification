@@ -206,9 +206,9 @@ def make_query(start_day, end_day, target, snames_str):
 def select_stations():
 
 	server = SSHTunnelForwarder(
-				("163.143.87.108", 22),
-				ssh_username="yoshiki",
-				ssh_password="yosi@810",
+				("", 22),
+				ssh_username="",
+				ssh_password="",
 				ssh_pkey=None,
 				remote_bind_address=('localhost', 5432),
 	)
@@ -216,19 +216,16 @@ def select_stations():
 	server.start()
 
 	conn = psycopg2.connect(
-		host='163.143.87.108',
+		host='',
 		port='5432',
-		database='airpollution',
-		user='yoshiki',
-		password='yoshiki4916',
+		database='',
+		user='',
+		password='',
 	)
-	# snames...df
-	if DEMO is True:
-		snames = ['28201090', '22221010', '23103020', '41203010', '46202520', '30205030']
-	else:
-		snames = pd.read_sql(sql='select sname from station_info order by random() limit 6', con=conn)
-		# snames...list (['s1','s2',...,'s6'])
-		snames = snames['sname'].to_list()
+
+	snames = pd.read_sql(sql='select sname from station_info order by random() limit 6', con=conn)
+	# snames...list (['s1','s2',...,'s6'])
+	snames = snames['sname'].to_list()
 	
 	conn.close()
 	server.stop()

@@ -51,7 +51,7 @@ frame_1 = sg.Frame('Pattern-mining options', [
         [sg.Text('From',font = font, size=(8,1)),sg.InputText(datetime.date(2019, 1, 1), key='from',font = font, size=(12,1)), sg.CalendarButton('Select',font = font, size=(5,1), target='from', format="%Y-%m-%d", default_date_m_d_y = (1, 1, 2019),)],
         [sg.Text('Pollutant',font = font, size =(8,1)), sg.Combo(pollutants, default_value = pollutants[0],font = font, size=(12,1), key='pollutant', enable_events=True)],
         [sg.Text('minSup',font = font, size=(8,1)), sg.InputText('0.1',font = font, size=(12,1), key='minSup')],
-        [sg.Checkbox('stations lock', default=False, key='stations-lock', font=font)]
+        [sg.Checkbox('Hold selected stations', default=False, key='stations-lock', font=font)]
     ]),
 
     sg.Column([
