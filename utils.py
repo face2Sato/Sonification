@@ -15,8 +15,6 @@ from PAMI.periodicFrequentPattern.basic import PFPGrowth as alg
 import psycopg2
 from sshtunnel  import SSHTunnelForwarder
 
-DEMO =  True
-
 
 
 SAMPLE_RATE = 44100 # SAMPLE_RATE(hz)
