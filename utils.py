@@ -22,6 +22,8 @@ BUFFER_SIZE = 512 # For speed when not using automation, choose a larger buffer 
 DSP_PATH = abspath("FM_op1.dsp")  # Must be absolute path
 
 
+
+
 def init_dsp():
 	engine = daw.RenderEngine(SAMPLE_RATE, BUFFER_SIZE)
 	faust_processor = engine.make_faust_processor("faust")
@@ -163,6 +165,7 @@ def sonification(mapping, sonification_rate, dir, fname):
 
 
 
+
 def pattern_mining(outputfile, minSup, maxPer):
 	
 	obj = alg.PFPGrowth('tmp.csv', minSup, maxPer) 
@@ -201,6 +204,9 @@ def make_query(start_day, end_day, target, snames_str):
 	return query
 
 
+
+
+
 def select_stations():
 
 	server = SSHTunnelForwarder(
@@ -229,7 +235,6 @@ def select_stations():
 	server.stop()
 
 	return snames
-
 
 
 
@@ -273,6 +278,7 @@ def get_dataset(start_day, end_day, pollutant, snames):
 	server.stop()
 
 	return dataset
+
 
 
 
