@@ -2,7 +2,7 @@
 ## Description
 
 
-It has been developed as a proof-of-concept for data pattern sonification.
+This study has been developed as a proof-of-concept for data pattern sonification.
 
 We've implemented data pattern sonification using FM synthesis. Air pollution data, which is temporal, is retrieved from the server and is done pattern mining. Then, pattern 
  data sonification is done.
